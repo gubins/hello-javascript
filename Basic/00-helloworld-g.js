@@ -2,7 +2,6 @@ console.log("hola mon")
 console.log('hola mon')
 console.log(`hola mon`)
 
-//comentari
 /*
 varies línies
 */
