@@ -94,9 +94,13 @@ function elComuns(a=[],b=[]){
     }
 }
 
+function elComuns2(a = [], b = []) {
+    return a.filter(eLement => b.includes(eLement));
+}
+
 let a=[1,2,3,4,5,90]
 let b=[90,4,5,6,7]
-console.log(elComuns(a,b))
+console.log(elComuns2(a,b))
 
 // 7. Crea una función que reciba un array de números y devuelva la suma de todos los números pares
 
