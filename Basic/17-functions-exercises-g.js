@@ -62,7 +62,41 @@ console.log(exMajuscules(["hola","que","tal"]))
 
 // 5. Crea una función que reciba un número y devuelva true si es primo, y false en caso contrario
 
+function esPrimer(numero){
+    //si el múmero és parell i més gran que 2, no és primer
+    if (numero<2) return false
+    if (numero==2) return true
+    if ((numero%2==0)&&(numero>2)) return false
+    // numero de divisions = (numero)^2
+    // si existeixen % =0 al quan es divideixi el numero per tots els números divisor, vol dir que  no és primer
+    let numDivisions=Math.floor(numero**0.5)
+    for (let i=3;i<=numDivisions;i+=2){
+        if((numero%i)==0) return false
+    }
+    return true
+}
+let numero=3
+//console.log((esPrimer(numero))?`El número ${numero} és número primer`:`El número ${numero} no és primer`)
+
+
 // 6. Crea una función que reciba dos arrays y devuelva un nuevo array que contenga los elementos comunes entre ambos
+
+//a=[1,2,3,4,5]
+//b=[4,5,6,7]
+//c=[4,5]
+
+function elComuns(a=[],b=[]){
+    let c=[]
+    a.forEach(eLement=>inclou(eLement))
+    return c
+    function inclou(eLement){
+        if(b.includes(eLement)) c.push(eLement)
+    }
+}
+
+let a=[1,2,3,4,5,90]
+let b=[90,4,5,6,7]
+console.log(elComuns(a,b))
 
 // 7. Crea una función que reciba un array de números y devuelva la suma de todos los números pares
 
