@@ -104,8 +104,55 @@ console.log(elComuns2(a,b))
 
 // 7. Crea una función que reciba un array de números y devuelva la suma de todos los números pares
 
+function sumaParells2(c=[]){
+    let suma=0
+    c.forEach(element=>((element%2==0)?suma +=element:suma +=0))
+    return suma
+
+}
+ 
+function sumaParells(c = []) {
+    let suma = 0;
+    c.forEach(element => element % 2 === 0 && (suma += element));
+    return suma;
+}
+
+console.log(sumaParells(a))
+
+
 // 8. Crea una función que reciba un array de números y devuelva un nuevo array con cada número elevado al cuadrado
 
+function elevarQuadrat(c=[]){
+    return(c.map(element => element**=2))
+}
+
+console.log(elevarQuadrat(a))
+
 // 9. Crea una función que reciba una cadena de texto y devuelva la misma cadena con las palabras en orden inverso
+let text="hola que tal"
+
+function invertirCadena(cadena){
+   return cadena.split(" ").reverse().join(" ")
+}
+
+console.log(invertirCadena(text))
 
 // 10. Crea una función que calcule el factorial de un número dado
+
+function factorialNum2(c){
+    let numFact=1
+    for (let i=c;i>1;i--){
+        numFact *=i
+    }
+    return numFact
+}
+
+function factorialNum(n, memo = {}) {
+    if (n <= 1) return 1;  // Caso base: el factorial de 0 o 1 es 1
+    if (memo[n]) return memo[n];  // Si ya está en la memoria cache, devuelve el valor almacenado
+
+    memo[n] = n * factorialNum(n - 1, memo);  // Calcula el factorial y lo guarda en el cache
+    return memo[n];
+}
+
+console.log(factorialNum(12))
